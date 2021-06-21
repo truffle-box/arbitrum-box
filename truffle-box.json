@@ -1,0 +1,5 @@
+{
+  "hooks": {
+      "post-unpack": "npm install && touch .env"
+  }
+}

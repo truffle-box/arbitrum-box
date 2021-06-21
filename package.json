@@ -1,0 +1,34 @@
+{
+  "name": "arbitrum-box",
+  "version": "1.0.0",
+  "description": "Boilerplate code to compile, migrate, and test a Truffle project on Arbitrum",
+  "main": "truffle-config.arbitrum.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run test:arbitrum --network=$network"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truffle-box/arbitrum-box.git"
+  },
+  "keywords": [
+    "Arbitrum",
+    "Ethereum",
+    "Truffle",
+    "Layer",
+    "2"
+  ],
+  "author": "Faina Shalts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/truffle-box/arbitrum-box/issues"
+  },
+  "homepage": "https://github.com/truffle-box/arbitrum-box#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.4.0",
+    "dotenv": "^10.0.0"
+  }
+}
