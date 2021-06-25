@@ -1,4 +1,0 @@
-[submodule "arbitrum"]
-	path = arbitrum
-	url = https://github.com/offchainlabs/arbitrum.git
-	branch = sequencer2
