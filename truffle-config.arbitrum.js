@@ -46,7 +46,6 @@ module.exports = {
           return new HDWalletProvider(mnemonic, 'https://arbitrum-rinkeby.infura.io/v3/' + infuraKey);
         },
         network_id: 421611,
-        gasPrice: 0,
         chainId: 421611
     },
     // requires a mainnet mnemonic; you can save this in .env or in whatever secure location
