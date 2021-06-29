@@ -21,7 +21,6 @@
 // create a file at the root of your project and name it .env -- there you can set process variables
 // like the mnemomic below. Note: .env is ignored by git in this project to keep your private information safe
 require('dotenv').config();
-const kovanMnemonic = process.env["KOVAN_MNEMONIC"];
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 

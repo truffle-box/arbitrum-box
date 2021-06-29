@@ -16,7 +16,7 @@
     "migrate:ethereum": "truffle migrate",
     "migrate:arbitrum": "truffle migrate --config truffle-config.arbitrum.js --network $npm_config_network",
     "test:ethereum": "truffle test",
-    "test:arbitrum": "truffle test --config truffle-config.ovm.js --network $npm_config_network"
+    "test:arbitrum": "truffle test --config truffle-config.arbitrum.js --network $npm_config_network"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
   "homepage": "https://github.com/truffle-box/arbitrum-box#readme",
   "dependencies": {},
   "devDependencies": {
-    "@truffle/hdwallet-provider": "^1.4.0",
+    "@truffle/hdwallet-provider": "^1.4.1",
     "dotenv": "^10.0.0"
   }
 }

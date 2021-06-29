@@ -26,9 +26,11 @@ module.exports = {
       url: "http://127.0.0.1:9545",
       network_id: "*",
     },
-    //for use with local environment -- use `npm runLocalArbitrum` to start
+    // for use with local environment -- use `npm runLocalArbitrum` to start
+    // after you have installed the repo and run `npm runLocalEthereum`, which will run a test L1 chain
     arbitrum_local: {
-      network_id: 45111017757781,
+      network_id: "*",
+      gas: 8500000,
       provider: function() {
         return new HDWalletProvider({
           mnemonic: {
@@ -36,8 +38,7 @@ module.exports = {
           },
           providerOrUrl: "http://127.0.0.1:8547/",
           addressIndex: 0,
-          numberOfAddresses: 1,
-          chainId:  45111017757781
+          numberOfAddresses: 1
         })
       }
     },
