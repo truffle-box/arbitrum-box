@@ -20,7 +20,7 @@ This Truffle Arbitrum Box provides you with the boilerplate structure necessary 
 
 As a starting point, this box contains only the SimpleStorage Solidity contract. Including minimal code was a conscious decision as this box is meant to provide the initial building blocks needed to get to work on Arbitrum without pushing developers to write any particular sort of application. With this box, you will be able to compile, migrate, and test Solidity code against a variety of Arbitrum test networks.
 
-Arbitrum's Layer 2 solution is almost fully compatible with the EVM. The main difference between the EVM and the Arbitrum chain that developers will notice is that some opcodes are different and concepts such as time and gas are handled a little differently. Developers can use their regular solidity compiler to compile contracts for Arbitrum. You can see the complete list of differences between the Arbitrum L2 chain and Ethereum [here](https://developer.offchainlabs.com/docs/differences_overview).
+Arbitrum's Layer 2 solution is almost fully compatible with the EVM. You do not need a separate compiler to compile your Solidity contracts. The main difference between the EVM and the Arbitrum chain that developers will notice is that some opcodes are different and concepts such as time and gas are handled a little differently. Developers can use their regular Solidity compiler to compile contracts for Arbitrum. You can see the complete list of differences between the Arbitrum L2 chain and Ethereum [here](https://developer.offchainlabs.com/docs/differences_overview).
 
 ## Requirements
 
@@ -108,13 +108,18 @@ You have several Arbitrum networks to choose from, prepackaged in this box (note
 
 - `arbitrum_local`: This network is the default Layer 1/Layer 2 integration provided by Arbitrum for testing your Arbitrum-compatible code. Documentation about this setup can be found [here](https://developer.offchainlabs.com/docs/local_blockchain).
   * You will need to install the code for this network in this box in order to use the scripts associated with it. To install it, run `npm run installLocalArbitrum`. You should only need to run this initiation command once. It will create an `arbitrum` directory in this project that will house the repository you need. If at any point you want to update to the latest Arbitrum docker image, you can delete your `arbitrum` directory and run this command again. If you'd rather house the Arbitrum local blockchain outside of this box, see [these notes](https://developer.offchainlabs.com/docs/installation) for how to get started doing so.
+
   * If you wish to use this network, follow these steps, in this order:
 
     1) In a new terminal tab, enter `npm run startLocalEthereum`.
     2) Wait for step #1 to complete. The Arbitrum Layer 2 blockchain depends on the existence of a Layer 1 for proper interoperability.
     3) In another new terminal tab, enter `npm run startLocalArbitrum`. Wait a little while, and you will see the Arbitrum blockchain running and interacting with the Layer 1 simulation from step #1! You are ready to try out deploying your contracts!
-- `arbitrum_testnet`: Arbitrum has deployed a testnet to the Rinkeby enetwork. The RPC endpoint is https://arbitrum-rinkeby.infura.io/v3/. In order to access this node for testing, you will need to connect a wallet  (we suggest [MetaMask](https://metamask.io/)). Save your seed phrase in a `.env` file as `RINKEBY_MNEMONIC`. Using an `.env` file for the mnemonic is safer practice because it is listed in `.gitignore` and thus will not be committed.
-  *  Currently, we have the gasPrice for transactions on Arbitrum Rinkeby set to zero. You should be able to use this network as configured at this time.
+- `arbitrum_testnet`: Arbitrum has deployed a testnet to the Rinkeby network. The RPC endpoint is https://arbitrum-rinkeby.infura.io/v3/. In order to access this node for testing, you will need to connect a wallet  (we suggest [MetaMask](https://metamask.io/)). Save your seed phrase in a `.env` file as `RINKEBY_MNEMONIC`. Using an `.env` file for the mnemonic is safer practice because it is listed in `.gitignore` and thus will not be committed.
+  * Currently, we have the gasPrice for transactions on Arbitrum Rinkeby set to zero. You should be able to use this network as configured at this time.
+  * In order to set up your MetaMask wallet to connect to the Arbitrum Rinkeby network, you will need to create a custom RPC network in your wallet. You can find detailed steps for this process [here](https://metamask.zendesk.com/hc/en-us/articles/360043227612-How-to-add-custom-Network-RPC-and-or-Block-Explorer). You will need the following information:
+    - RPC Url: `https://arbitrum-rinkeby.infura.io/v3/ + <your infura key>`
+    - chain id: 421611
+
 - `arbitrum_mainnet`: This is the mainnet for Arbitrum's Layer 2 solution. You will need to connect your wallet to the Arbitrum mainnet RPC network, located at https://arbitrum-mainnet.infura.io/v3/
 
 Layer 1 networks are included in the `truffle-config.js` file, but it is not necessary to deploy your base contracts to Layer 1 right now. Eventually, you will likely have a Layer 2 contract that you want to connect with a Layer 1 contract. One example is an ERC20 contract that is deployed on an Arbitrum network. At some point the user will wish to withdraw their funds into Ethereum. There will need to be a contract deployed on Layer 1 that can receive the message from Layer 2 to mint the appropriate tokens on Layer 1 for the user. More information on this system can be found [here](https://developer.offchainlabs.com/docs/bridging_assets).
