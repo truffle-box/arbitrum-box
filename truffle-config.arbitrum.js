@@ -43,11 +43,19 @@ module.exports = {
       }
     },
     arbitrum_testnet: {
-      provider: function () {
-          return new HDWalletProvider(mnemonic, 'https://arbitrum-rinkeby.infura.io/v3/' + infuraKey);
-        },
-        network_id: 421611,
-        chainId: 421611
+      network_id: 421611,
+      provider: function() {
+        return new HDWalletProvider({
+          mnemonic: {
+            phrase: mnemonic
+          },
+          providerOrUrl: 'https://arbitrum-rinkeby.infura.io/v3/' + infuraKey,
+          addressIndex: 0,
+          numberOfAddresses: 1,
+          network_id: 421611,
+          chainId: 421611
+        })
+      }
     },
     // requires a mainnet mnemonic; you can save this in .env or in whatever secure location
     // you wish to use
