@@ -52,7 +52,7 @@ module.exports = {
       provider: function() {
         return new HDWalletProvider({
           mnemonic: {
-            phrase: mnemonic
+            phrase: rinkebyMnemonic
           },
           providerOrUrl: 'https://arbitrum-rinkeby.infura.io/v3/' + infuraKey,
           addressIndex: 0,
