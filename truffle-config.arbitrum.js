@@ -45,6 +45,8 @@ module.exports = {
         })
       }
     },
+    // requires a rinkeby mnemonic; you can save this in .env or in whatever secure location
+    // you wish to use    
     arbitrum_testnet: {
       network_id: 421611,
       provider: function() {
