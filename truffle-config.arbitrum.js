@@ -4,6 +4,9 @@ require('dotenv').config();
 const mnemonic = process.env["MNEMONIC"];
 const infuraKey = process.env["INFURA_KEY"];
 
+//uncomment to use rinkebyMnemonic, be sure to set it in the .env file
+//const rinkebyMnemonic = process.env["RINKEBY_MNEMONIC"]
+
 //uncomment to use mainnetMnemonic, be sure to set it in the .env file
 //const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
 
