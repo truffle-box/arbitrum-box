@@ -107,6 +107,9 @@ npm run migrate:arbitrum --network=(arbitrum_local | arbitrum_testnet | arbitrum
 You have several Arbitrum networks to choose from, prepackaged in this box (note: Layer 1 networks are included in the regular `truffle-config.js` file, to aid you with further development. But here we'll just go through the Layer 2 deployment options available):
 
 - `arbitrum_local`: This network is the default Layer 1/Layer 2 integration provided by Arbitrum for testing your Arbitrum-compatible code. Documentation about this setup can be found [here](https://developer.offchainlabs.com/docs/local_blockchain).
+
+_Please note: Arbitrum is currently changing how running a local Arbitrum node works, and until the changes are complete the local Arbitrum network will not work. We will remove this note once the local node setup has been updated_
+
   * You will need to install the code for this network in this box in order to use the scripts associated with it. To install it, run `npm run installLocalArbitrum`. You should only need to run this initiation command once. It will create an `arbitrum` directory in this project that will house the repository you need. If at any point you want to update to the latest Arbitrum docker image, you can delete your `arbitrum` directory and run this command again. If you'd rather house the Arbitrum local blockchain outside of this box, see [these notes](https://developer.offchainlabs.com/docs/installation) for how to get started doing so.
 
   * If you wish to use this network, follow these steps, in this order:
