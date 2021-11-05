@@ -28,6 +28,7 @@ module.exports = {
     },
     // for use with local environment -- use `npm runLocalArbitrum` to start
     // after you have installed the repo and run `npm runLocalEthereum`, which will run a test L1 chain
+    // **please note, this network does not currently work; we will remove this line once the issue is fixed!
     arbitrum_local: {
       network_id: "*",
       gas: 8500000,
