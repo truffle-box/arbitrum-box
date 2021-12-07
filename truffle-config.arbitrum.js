@@ -4,6 +4,9 @@ require('dotenv').config();
 const mnemonic = process.env["MNEMONIC"];
 const infuraKey = process.env["INFURA_KEY"];
 
+//uncomment to use rinkebyMnemonic, be sure to set it in the .env file
+//const rinkebyMnemonic = process.env["RINKEBY_MNEMONIC"]
+
 //uncomment to use mainnetMnemonic, be sure to set it in the .env file
 //const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
 
@@ -43,12 +46,14 @@ module.exports = {
         })
       }
     },
+    // requires a rinkeby mnemonic; you can save this in .env or in whatever secure location
+    // you wish to use    
     arbitrum_testnet: {
       network_id: 421611,
       provider: function() {
         return new HDWalletProvider({
           mnemonic: {
-            phrase: mnemonic
+            phrase: rinkebyMnemonic
           },
           providerOrUrl: 'https://arbitrum-rinkeby.infura.io/v3/' + infuraKey,
           addressIndex: 0,
