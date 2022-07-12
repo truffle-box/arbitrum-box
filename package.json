@@ -9,7 +9,7 @@
   "scripts": {
     "test": "npm run test:arbitrum --network=$network",
     "installLocalArbitrum": "git clone -b master https://github.com/offchainlabs/arbitrum.git",
-    "startLocalEthereum": "cd arbitrum && git submodule update --init --recursive && yarn && yarn build && yarn docker:build:geth && yarn docker:geth",
+    "startLocalEthereum": "cd arbitrum && git submodule update --init --recursive && yarn && yarn docker:build:geth && yarn docker:geth",
     "startLocalArbitrum": "cd arbitrum && yarn demo:initialize && yarn demo:deploy",
     "compile:ethereum": "truffle compile",
     "compile:arbitrum": "truffle compile --config truffle-config.arbitrum.js",
