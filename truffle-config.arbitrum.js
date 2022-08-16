@@ -7,9 +7,6 @@ const infuraKey = process.env["INFURA_KEY"];
 //uncomment to use goerliMnemonic, be sure to set it in the .env file
 //const goerliMnemonic = process.env["GOERLI_MNEMONIC"];
 
-//uncomment to use rinkebyMnemonic, be sure to set it in the .env file
-//const rinkebyMnemonic = process.env["RINKEBY_MNEMONIC"];
-
 //uncomment to use mainnetMnemonic, be sure to set it in the .env file
 //const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
 
@@ -49,6 +46,9 @@ module.exports = {
         })
       }
     },
+    // Arbitrum Goerli is the replacement for RinkArby, a previous Arbitrum testnet.
+    // RinkArby will be deprecated when Rinkeby itself gets deprecated, so it has been removed from here.
+    // More details: https://developer.offchainlabs.com/docs/Public_Chains
     arbitrum_goerli: {
       network_id: 421613,
       provider: function() {
@@ -61,21 +61,6 @@ module.exports = {
           numberOfAddresses: 1,
           network_id: 421613,
           chainId: 421613
-        })
-      }
-    },
-    arbitrum_testnet: {
-      network_id: 421611,
-      provider: function() {
-        return new HDWalletProvider({
-          mnemonic: {
-            phrase: rinkebyMnemonic
-          },
-          providerOrUrl: 'https://arbitrum-rinkeby.infura.io/v3/' + infuraKey,
-          addressIndex: 0,
-          numberOfAddresses: 1,
-          network_id: 421611,
-          chainId: 421611
         })
       }
     },
