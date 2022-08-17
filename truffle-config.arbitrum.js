@@ -47,7 +47,7 @@ module.exports = {
       }
     },
     // Arbitrum Goerli is the replacement for RinkArby, a previous Arbitrum testnet.
-    // RinkArby will be deprecated when Rinkeby itself gets deprecated, so it has been removed from here.
+    // RinkArby will be deprecated when Rinkeby itself gets deprecated, so it has been removed from this configuration file.
     // More details: https://developer.offchainlabs.com/docs/Public_Chains
     arbitrum_goerli: {
       network_id: 421613,
