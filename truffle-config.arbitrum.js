@@ -1,14 +1,12 @@
 // create a file at the root of your project and name it .env -- there you can set process variables
 // like the mnemomic below. Note: .env is ignored by git in this project to keep your private information safe
 require('dotenv').config();
-const mnemonic = process.env["MNEMONIC"];
+
+// Make sure you have these values set in a .env file, and add .env to your .gitignore.
 const infuraKey = process.env["INFURA_KEY"];
-
-//uncomment to use goerliMnemonic, be sure to set it in the .env file
-//const goerliMnemonic = process.env["GOERLI_MNEMONIC"];
-
-//uncomment to use mainnetMnemonic, be sure to set it in the .env file
-//const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
+const mnemonic = process.env["MNEMONIC"];
+const goerliMnemonic = process.env["GOERLI_MNEMONIC"];
+const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
