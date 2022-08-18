@@ -62,7 +62,7 @@ If you are unfamiliar with using `.env` for managing your mnemonics and other ke
 ```
 MNEMONIC="jar deny prosper gasp flush glass core corn alarm treat leg smart"
 INFURA_KEY="<Your Infura Project ID>"
-RINKEBY_MNEMONIC="<Your Rinkeby Mnemonic>"
+GOERLI_MNEMONIC="<Your Goerli Mnemonic>"
 MAINNET_MNEMONIC="<Your Arbitrum Mainnet Mnemonic>"
 ```
 

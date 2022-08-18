@@ -1,11 +1,12 @@
 // create a file at the root of your project and name it .env -- there you can set process variables
 // like the mnemomic below. Note: .env is ignored by git in this project to keep your private information safe
 require('dotenv').config();
-const mnemonic = process.env["MNEMONIC"];
-const infuraKey = process.env["INFURA_KEY"];
 
-//uncomment to use mainnetMnemonic, be sure to set it in the .env file
-//const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
+// Make sure you have these values set in a .env file, and add .env to your .gitignore.
+const infuraKey = process.env["INFURA_KEY"];
+const mnemonic = process.env["MNEMONIC"];
+const goerliMnemonic = process.env["GOERLI_MNEMONIC"];
+const mainnetMnemonic = process.env["MAINNET_MNEMONIC"]
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
@@ -43,18 +44,21 @@ module.exports = {
         })
       }
     },
-    arbitrum_testnet: {
-      network_id: 421611,
+    // Arbitrum Goerli is the replacement for RinkArby, a previous Arbitrum testnet.
+    // RinkArby will be deprecated when Rinkeby itself gets deprecated, so it has been removed from this configuration file.
+    // More details: https://developer.offchainlabs.com/docs/Public_Chains
+    arbitrum_goerli: {
+      network_id: 421613,
       provider: function() {
         return new HDWalletProvider({
           mnemonic: {
-            phrase: mnemonic
+            phrase: goerliMnemonic
           },
-          providerOrUrl: 'https://arbitrum-rinkeby.infura.io/v3/' + infuraKey,
+          providerOrUrl: 'https://arbitrum-goerli.infura.io/v3/' + infuraKey,
           addressIndex: 0,
           numberOfAddresses: 1,
-          network_id: 421611,
-          chainId: 421611
+          network_id: 421613,
+          chainId: 421613
         })
       }
     },
